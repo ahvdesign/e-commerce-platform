@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
+  signInWithGooglePopup,
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
@@ -55,6 +56,11 @@ const SignUpForm = () => {
     setFormFields({ ...formFields, [name]: value });
   };
 
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await createUserDocumentFromAuth(user);
+  };
+
   return (
     <div className="sign-up-container">
       <h2>Don't have an account?</h2>
@@ -104,6 +110,13 @@ const SignUpForm = () => {
         <div className="buttons-group">
           <Button buttonType="inverted" type="submit">
             Sign Up
+          </Button>
+          <Button
+            type="button"
+            buttonType={"google"}
+            onClick={signInWithGoogle}
+          >
+            Sign Up with Google
           </Button>
         </div>
       </form>

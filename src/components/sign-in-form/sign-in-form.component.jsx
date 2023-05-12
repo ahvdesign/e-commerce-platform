@@ -35,12 +35,18 @@ const SignInForm = () => {
       console.log("response", response);
       resetFormFields();
     } catch (error) {
-      if (error.code === "auth/email-already-in-use") {
-        // TODO Make a real UI for this
-        // TODO Handle the other errors
-        alert("Email already in use");
-      } else {
-        console.log("Error signing up", error.message);
+      // TODO Make a real UI for this
+      // TODO Handle the other errors at https://firebase.google.com/docs/reference/js/auth#autherrorcodes
+      switch (error.code) {
+        case "auth/user-not-found":
+          alert("Incorrect email or password");
+          break;
+        case "auth/wrong-password":
+          alert("Incorrect email or password");
+          break;
+        default:
+          alert("Error signing in, please notify the administrator");
+          break;
       }
     }
   };
@@ -82,7 +88,11 @@ const SignInForm = () => {
         />
         <div className="buttons-container">
           <Button type="submit">Sign In</Button>
-          <Button buttonType={"google"} onClick={signInWithGoogle}>
+          <Button
+            type="button"
+            buttonType={"google"}
+            onClick={signInWithGoogle}
+          >
             Sign In with Google
           </Button>
         </div>
