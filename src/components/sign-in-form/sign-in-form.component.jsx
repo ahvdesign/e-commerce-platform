@@ -4,6 +4,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
   signInWithGooglePopup,
+  signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
@@ -27,6 +28,12 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
+      const response = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+      console.log("response", response);
+      resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         // TODO Make a real UI for this
@@ -74,9 +81,7 @@ const SignInForm = () => {
           }}
         />
         <div className="buttons-container">
-          <Button buttonType="inverted" type="submit">
-            Sign In
-          </Button>
+          <Button type="submit">Sign In</Button>
           <Button buttonType={"google"} onClick={signInWithGoogle}>
             Sign In with Google
           </Button>
