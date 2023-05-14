@@ -8,6 +8,8 @@
   SPA routing.
 - firebase
   Full back end solution. Custom authentication used.
+- react context
+  Used for state management.
 
 ## Other Tech
 
