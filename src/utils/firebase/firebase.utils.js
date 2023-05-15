@@ -56,6 +56,7 @@ export const createUserDocumentFromAuth = async (
         ...additionalInfo,
       });
     } catch (error) {
+      // TODO actually log this somewhere and handle the error
       console.log("Error creating user", error.message);
     }
   }

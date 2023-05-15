@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Dragon Boss",
+    "imageUrl": "https://cdn.thingiverse.com/assets/81/83/5f/35/7f/featured_preview_Terry_TBDHD.jpg",
+    "price": 15
+  },
+  {
+    "id": 2,
+    "name": "Beholder",
+    "imageUrl": "https://cdn.thingiverse.com/renders/14/d9/62/3b/b6/cf134b6b8fa8ef0fe1a629efe9007549_preview_featured.jpg",
+    "price": 10
+  },
+  {
+    "id": 3,
+    "name": "Basilisk",
+    "imageUrl": "https://i.imgur.com/5MyIg3x.jpg",
+    "price": 10
+  },
+  {
+    "id": 4,
+    "name": "Fighter: Dual Blades",
+    "imageUrl": "https://cdn.thingiverse.com/assets/42/2e/92/d1/bc/featured_preview_2019-09-09_20_20_30-Photo_-_Google_Photos.png",
+    "price": 10
+  }
+]
