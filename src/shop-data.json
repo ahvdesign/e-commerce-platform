@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Dragon Boss",
-    "imageUrl": "https://cdn.thingiverse.com/assets/81/83/5f/35/7f/featured_preview_Terry_TBDHD.jpg",
+    "name": "Gold Dragon",
+    "imageUrl": "https://cdn2.myminifactory.com/assets/object-assets/60a68648e5d4a/images/720X720-gold-dragon-02.jpg",
     "price": 15
   },
   {
     "id": 2,
     "name": "Beholder",
-    "imageUrl": "https://cdn.thingiverse.com/renders/14/d9/62/3b/b6/cf134b6b8fa8ef0fe1a629efe9007549_preview_featured.jpg",
+    "imageUrl": "https://cdn2.myminifactory.com/assets/object-assets/61bc663c5cecd/images/720X720-beholder01-1.jpg",
     "price": 10
   },
   {
     "id": 3,
-    "name": "Basilisk",
-    "imageUrl": "https://i.imgur.com/5MyIg3x.jpg",
+    "name": "Infernum Puppy",
+    "imageUrl": "https://cdn2.myminifactory.com/assets/object-assets/62e568a2ed1e0/images/720X720-puppy03.jpg",
     "price": 10
   },
   {
     "id": 4,
-    "name": "Fighter: Dual Blades",
-    "imageUrl": "https://cdn.thingiverse.com/assets/42/2e/92/d1/bc/featured_preview_2019-09-09_20_20_30-Photo_-_Google_Photos.png",
+    "name": "Sylvan Soldier",
+    "imageUrl": "https://cdn2.myminifactory.com/assets/object-assets/5f0379afdf60d/images/720X720-archer02.jpg",
     "price": 10
   }
 ]
