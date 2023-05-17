@@ -18,7 +18,6 @@ import {
   writeBatch,
   query,
   getDocs,
-  where,
 } from "firebase/firestore";
 
 const firebaseConfig = {
