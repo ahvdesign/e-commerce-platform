@@ -9,17 +9,17 @@
 
   img {
     width: 100%;
-    height: 95%;
+    height: 100%;
     object-fit: cover;
-    margin-bottom: 5px;
   }
 
   button {
     width: 80%;
-    opacity: 0.7;
+    opacity: 0;
     position: absolute;
-    top: 55%;
-    display: none;
+    top: 60%;
+
+    transition: opacity 0.1s;
   }
 
   &:hover {
@@ -35,15 +35,14 @@
 
   .footer {
     width: 100%;
-    height: 25%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 20px;
 
     .name {
       width: 60%;
-      margin-bottom: 15px;
       text-align: start;
     }
 
