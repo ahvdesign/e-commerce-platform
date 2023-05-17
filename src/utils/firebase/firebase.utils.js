@@ -9,7 +9,17 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  writeBatch,
+  query,
+  getDocs,
+  where,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDgV7PYiwYBGdRADOjZlZJr-awtB-vig0g",
@@ -23,7 +33,7 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
-// TODO Remove this and do something sick with analytics
+// TODO Do something rad with analytics, data visualization in admin panel?
 console.log(analytics);
 
 const googleProvider = new GoogleAuthProvider();
@@ -34,6 +44,35 @@ export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
 
 export const db = getFirestore();
+
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionReference = collection(db, collectionKey);
+  const batch = writeBatch(db);
+
+  objectsToAdd.forEach((object) => {
+    const docRef = doc(collectionReference, object.title.toLowerCase());
+    batch.set(docRef, object);
+  });
+
+  await batch.commit();
+  console.log("done");
+};
+
+export const getCategoriesAndDocuments = async () => {
+  const q = query(collection(db, "categories"));
+
+  const querySnapshot = await getDocs(q);
+  const categoryMap = querySnapshot.docs.reduce((accumulator, docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+    accumulator[title.toLowerCase()] = items;
+    return accumulator;
+  }, {});
+
+  return categoryMap;
+};
 
 export const createUserDocumentFromAuth = async (
   userAuth,
@@ -56,7 +95,7 @@ export const createUserDocumentFromAuth = async (
         ...additionalInfo,
       });
     } catch (error) {
-      // TODO actually log this somewhere and handle the error
+      // TODO Log this somewhere and handle the error
       console.log("Error creating user", error.message);
     }
   }
