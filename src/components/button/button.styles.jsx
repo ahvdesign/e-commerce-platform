@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../utils/style/style.utils";
 
 export const BaseButton = styled.button`
   min-width: 165px;
@@ -8,8 +9,8 @@ export const BaseButton = styled.button`
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  background-color: black;
-  color: white;
+  background-color: ${colors.primary[500]};
+  color: ${colors.base.white};
   text-transform: uppercase;
   font-weight: bolder;
   border: none;
@@ -18,15 +19,15 @@ export const BaseButton = styled.button`
   justify-content: center;
 
   &:hover {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    background-color: ${colors.gray[100]};
+    color: ${colors.gray[800]};
+    border: 1px solid ${colors.gray[800]};
   }
 `;
 
 export const GoogleSignInButton = styled(BaseButton)`
   background-color: #4285f4;
-  color: white;
+  color: ${colors.base.white};
 
   &:hover {
     background-color: #357ae8;
@@ -35,13 +36,13 @@ export const GoogleSignInButton = styled(BaseButton)`
 `;
 
 export const InvertedButton = styled(BaseButton)`
-  background-color: white;
-  color: black;
-  border: 1px solid black;
+  background-color: ${colors.gray[100]};
+  color: ${colors.gray[800]};
+  border: 1px solid ${colors.gray[800]};
 
   &:hover {
-    background-color: black;
-    color: white;
+    background-color: ${colors.gray[800]};
+    color: ${colors.base.white};
     border: none;
   }
 `;

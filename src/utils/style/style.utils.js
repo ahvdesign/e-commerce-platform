@@ -74,3 +74,71 @@ export const colors = {
     950: "#053321",
   },
 };
+
+export const fonts = {
+  displayXXL: {
+    regular: `
+      font-size: 72px;
+      font-weight: 400;
+      line-height: 90px;
+      letter-spacing: -0.02em;
+    `,
+    medium: `
+      font-size: 72px;
+      font-weight: 500;
+      line-height: 90px;
+      letter-spacing: -0.02em;
+    `,
+    semibold: `
+      font-style: normal;
+      font-weight: 600;
+      font-size: 72px;
+      line-height: 90px;
+      letter-spacing: -0.02em;
+    `,
+  },
+  displayXL: {
+    semibold: `
+      font-style: normal;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 72px;
+      letter-spacing: -0.02em;
+      `,
+  },
+  displaySM: {
+    semibold: `
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 38px;
+      letter-spacing: 0em;
+    `,
+  },
+  textMD: {
+    regular: `
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0em;
+    `,
+    medium: `
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0em;
+    `,
+    semibold: `
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      letter-spacing: 0em;
+    `,
+  },
+};
+
+export const shadows = {
+  lg: `
+    box-shadow: 0px 4px 6px -2px #10182808;
+    box-shadow: 0px 12px 16px -4px #10182814;
+  `,
+};
